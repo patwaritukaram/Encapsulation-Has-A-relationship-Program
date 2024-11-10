@@ -1,0 +1,71 @@
+package Encapsulation_Program;
+
+class Car {
+   
+	String brand;
+	String model;
+	String type;
+	String color;
+	double price;
+	Engine engine;
+	
+	
+     			
+   Car(String brand,String model,String type,String color,double price){
+	   
+	   this.brand=brand;
+	   this.model=model;
+	   this.type=type;
+	   this.color=color;
+	   this.price=price;
+	   this.engine=new Engine("backspace", 600, 67, 5, 50);
+   }
+   
+   public void DisplayCar() {   
+	   
+	   System.out.println("Car Details .....");
+	   System.out.println("Brand "+brand);
+	   System.out.println("model "+model);
+	   System.out.println("type "+type);
+	   System.out.println("color "+color);
+	   System.out.println("price "+price);
+   }
+	
+   class Engine{
+	    String type;
+	    double CC;
+	    double bcp;
+	    int gears;
+	    double milleage;
+	    
+	    Engine(String type,double CC,double bcp,int gears,double milleage) {
+
+
+	    	this.type=type;
+	    	this.CC=CC;
+	    	this.gears=gears;
+	    	this.milleage=milleage;
+		}
+	    public void DisplayEngine()
+	    {
+	 	   System.out.println();
+	 	   System.out.println("engine Details.....");
+	        System.out.println("type "+type);
+	        System.out.println("Enginee Capacity " +CC+"cc");
+	        System.out.println("Enginee gears "+gears+"gear");
+	        System.out.println("Milleage for car "+milleage+"milleage");
+	    }
+   }
+   
+ 
+	public static void main(String[] args) {
+
+
+            Car car=new Car("TATA", "Nano", "motoback", "Yellow", 200000);
+             car.DisplayCar();
+             car.engine.DisplayEngine();
+          
+		
+	}
+
+}
